@@ -1,0 +1,17 @@
+.field-title {
+  text-align: center;
+  margin: 2rem;
+  & h1 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.field-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 2rem 2rem;
+}

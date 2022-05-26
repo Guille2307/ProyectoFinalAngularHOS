@@ -1,1 +1,12 @@
-<p>fields works!</p>
+<div class="field-title">
+  <h1>battlefields</h1>
+  <p>
+    Enjoy over a dozen unique battlefields with a variety of objectives,
+    layouts, and themes. Here are a few examples of what you can find in the
+    many realms of the Nexus:
+  </p>
+</div>
+
+<div class="field-list">
+  <app-field *ngFor="let field of fields" [field]="field"></app-field>
+</div>
