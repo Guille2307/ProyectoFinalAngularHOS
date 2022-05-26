@@ -1,0 +1,43 @@
+.initial-banner {
+  text-align: center;
+  background-color: #0a1133;
+  padding: 2rem;
+  & p {
+    margin: 0 2rem;
+  }
+}
+.video-container {
+  overflow-x: hidden;
+  width: 100%;
+  display: block;
+  border: solid 1px #5757e580;
+}
+.mid-banner {
+  text-align: center;
+  background-color: #1b1a99;
+  padding: 2rem;
+  & p {
+    margin: 0 2rem;
+  }
+}
+.main {
+  background-color: #0a1133;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  & h3 {
+    margin-bottom: 1.5rem;
+  }
+}
+.main-role {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 200px;
+  text-align: center;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
