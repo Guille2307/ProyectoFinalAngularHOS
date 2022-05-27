@@ -1,1 +1,19 @@
-<p>heroes works!</p>
+<div class="hero-title">
+  <h1>Choose your hero and start the storm!</h1>
+  <p>
+    The heroes are divided into the following categories so that you can find
+    the feature that best suits your style of play:
+  </p>
+</div>
+<div class="hero-Filter">
+  <label class="hero-label" for="filter">Find your hero by name</label>
+  <input
+    class="hero-input"
+    id="filter"
+    [(ngModel)]="filterValue"
+    (change)="onFilter()"
+  />
+</div>
+<div class="hero-list">
+  <app-hero *ngFor="let hero of filteredHeroes" [hero]="hero"></app-hero>
+</div>

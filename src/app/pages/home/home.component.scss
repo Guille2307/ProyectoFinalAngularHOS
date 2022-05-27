@@ -10,7 +10,6 @@
   overflow-x: hidden;
   width: 100%;
   display: block;
-  border: solid 1px #5757e580;
 }
 .mid-banner {
   text-align: center;
@@ -40,4 +39,17 @@
   text-align: center;
   margin-left: 1rem;
   margin-bottom: 1rem;
+}
+.ranked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  padding: 2rem;
+  text-align: center;
+  & img {
+    margin: 0 2rem;
+    width: 410px;
+  }
 }

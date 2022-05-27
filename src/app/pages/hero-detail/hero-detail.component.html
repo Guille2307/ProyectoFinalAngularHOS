@@ -1,0 +1,13 @@
+<div class="hero-detail" *ngIf="currentHero$ | async as currentHero">
+  <img
+    class="hero-detail_image"
+    [src]="currentHero.image"
+    alt="{{ currentHero.character }}"
+  />
+  <div class="hero-detail_paragraph">
+    <h1>{{ currentHero.character }}</h1>
+    <h2>{{ currentHero.role }}</h2>
+    <h3>{{ currentHero.universe }}</h3>
+    <p>{{ currentHero.description }}</p>
+  </div>
+</div>

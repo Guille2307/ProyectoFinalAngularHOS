@@ -1,0 +1,8 @@
+<div class="hero-container" *ngIf="hero">
+  <img class="hero-image" [src]="hero.image" alt="{{ hero.character }}" />
+  <div class="hero-paragraph">
+    <p class="hero-praragraph__name">{{ hero.character }}</p>
+    <p>{{ hero.role }}</p>
+    <a class="hero-link" [routerLink]="['/detail', hero._id]">Detail</a>
+  </div>
+</div>

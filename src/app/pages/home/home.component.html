@@ -9,8 +9,18 @@
 </div>
 
 <section>
-  <video class="video-container" autoplay muted loop>
-    <source src="../../../assets/heroesoftheStorm.mp4" type="video/mp4" />
+  <video
+    class="video-container"
+    autoplay="true"
+    poster="../../../assets/heroes-of-the-storm bg.webp"
+    muted
+    loop
+  >
+    <source
+      (load)="onLoadVideo()"
+      src="../../../assets/HeroesoftheStorm1.mp4"
+      type="video/mp4"
+    />
   </video>
 </section>
 <div class="mid-banner">
@@ -73,4 +83,9 @@
       damage from afar.
     </p>
   </div>
+</section>
+<section class="ranked">
+  <img src="../../../assets/ranked-icon-badges.webp" alt="" />
+  <h2>Ranked: League of the Storm</h2>
+  <p>Defeat your enemies and rank up to Grand Master alone or in a group.</p>
 </section>
