@@ -40,3 +40,22 @@
   font-weight: bold;
   font-size: 18px;
 }
+.hero-pages {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #5757e5;
+  padding: 2rem;
+}
+.hero-pages_paragraph {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.hero-page__input {
+  width: 30px;
+  height: 30px;
+  border: solid 2px #5757e5;
+  text-align: center;
+}

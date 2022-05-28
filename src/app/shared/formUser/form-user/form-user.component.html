@@ -1,0 +1,24 @@
+<div *ngIf="userForm">
+  <form class="form-container" [formGroup]="userForm" (submit)="loginUser()">
+    <div class="form-items">
+      <label class="form-label">Email</label>
+      <input
+        class="form-control"
+        formControlName="email"
+        type="email"
+        require
+      />
+    </div>
+    <div class="form-items">
+      <label class="form-label">Password</label>
+      <input
+        class="form-control"
+        formControlName="password"
+        type="password"
+        require
+      />
+    </div>
+    <button class="form-submit" type="submit">Sign up</button>
+    {{ error }}
+  </form>
+</div>

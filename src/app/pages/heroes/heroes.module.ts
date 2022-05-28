@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,6 +9,6 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HeroesComponent, HeroComponent],
-  imports: [CommonModule, HeroesRoutingModule, FormsModule],
+  imports: [CommonModule, HeroesRoutingModule, FormsModule, SharedModule],
 })
 export class HeroesModule {}

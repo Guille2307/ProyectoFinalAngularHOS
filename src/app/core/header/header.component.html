@@ -7,16 +7,49 @@
     />
   </div>
   <div class="header-linkContainer">
-    <a class="header-link" [routerLink]="['']">Home</a><span>|</span>
-    <a class="header-link" [routerLink]="['/heroes']">Heroes</a><span>|</span>
-    <a class="header-link" [routerLink]="['/fields']">Fields</a><span>|</span>
-    <a class="header-link" [routerLink]="['/create-heroes']">Create Heroes</a
+    <a
+      [ngClass]="{ isSelected: selectedRoute === '' }"
+      class="header-link"
+      [routerLink]="['']"
+      >Home</a
     ><span>|</span>
-    <a class="header-link" [routerLink]="['/create-fields']">Create Fields</a
+    <a
+      [ngClass]="{ isSelected: selectedRoute === 'heroes' }"
+      class="header-link"
+      [routerLink]="['/heroes']"
+      >Heroes</a
     ><span>|</span>
-    <a class="header-link" [routerLink]="['/register']">Register</a
+    <a
+      [ngClass]="{ isSelected: selectedRoute === 'fields' }"
+      class="header-link"
+      [routerLink]="['/fields']"
+      >Fields</a
     ><span>|</span>
-    <a class="header-link" [routerLink]="['/login']">Login</a>
+    <a
+      [ngClass]="{ isSelected: selectedRoute === 'create-heroes' }"
+      class="header-link"
+      [routerLink]="['/create-heroes']"
+      >Create Heroes</a
+    ><span>|</span>
+    <a
+      [ngClass]="{ isSelected: selectedRoute === 'create-fields' }"
+      class="header-link"
+      [routerLink]="['/create-fields']"
+      >Create Fields</a
+    ><span>|</span>
+    <a
+      [ngClass]="{ isSelected: selectedRoute === 'register' }"
+      class="header-link"
+      [routerLink]="['/register']"
+      >Register</a
+    ><span>|</span>
+    <a
+      [ngClass]="{ isSelected: selectedRoute === 'login' }"
+      class="header-link"
+      [routerLink]="['/login']"
+      (click)="login()"
+      >Login</a
+    >
   </div>
 </div>
 <div class="header-iconContainer">

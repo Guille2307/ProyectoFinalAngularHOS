@@ -1,0 +1,33 @@
+.erro {
+  color: red;
+}
+.hero-form {
+  display: flex;
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #0c0c4f;
+  padding: 3rem;
+}
+.hero-fields {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-label {
+  margin: 0.5rem 2rem;
+}
+.formButton {
+  padding: 0.5rem 0.5rem;
+  width: 150px;
+  color: white;
+  background-color: #000116;
+}
+.formInput,
+.form-textarea {
+  margin: 1rem 1rem;
+  padding: 1rem;
+  width: 250px;
+}

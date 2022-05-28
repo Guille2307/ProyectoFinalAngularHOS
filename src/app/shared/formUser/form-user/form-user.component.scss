@@ -1,0 +1,29 @@
+.form-container {
+  display: flex;
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #0c0c4f;
+  padding: 3rem;
+}
+.form-label {
+  margin: 0.5rem 2rem;
+}
+.form-submit {
+  padding: 0.5rem 0.5rem;
+  width: 150px;
+  color: white;
+  background-color: #000116;
+}
+.form-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-control {
+  margin: 1rem 1rem;
+  padding: 1rem;
+  width: 250px;
+}

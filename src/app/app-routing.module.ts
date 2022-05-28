@@ -1,3 +1,4 @@
+import { AuthGuardGuard } from './core/guards/auth-guard.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -31,6 +32,7 @@ const routes: Routes = [
       import('src/app/pages/create-heroes/create-heroes.module').then(
         (m) => m.CreateHeroesModule
       ),
+    canActivate: [AuthGuardGuard],
   },
   {
     path: 'register',
@@ -43,6 +45,13 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('src/app/pages/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () =>
+      import('src/app/pages/hero-detail/hero-detail.module').then(
+        (m) => m.HeroDetailModule
+      ),
   },
   {
     path: '**',

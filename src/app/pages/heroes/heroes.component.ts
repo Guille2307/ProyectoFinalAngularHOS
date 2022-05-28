@@ -1,3 +1,4 @@
+import { PaginateService } from './../../core/services/paginate/paginate.service';
 import { ApiServiceService } from 'src/app/core/services/Api/api-service.service';
 import { IHero } from './../../core/services/models/hero.model';
 import { Component, OnInit } from '@angular/core';
@@ -8,27 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./heroes.component.scss'],
 })
 export class HeroesComponent implements OnInit {
-  public filteredHeroes?: IHero[];
   public heroes?: IHero[];
   public filterValue: string = '';
+  public page: number = 0;
+  public maxPages: number = 0;
 
-  constructor(private apiServiceService: ApiServiceService) {}
+  constructor(
+    private apiServiceService: ApiServiceService,
+    private paginateService: PaginateService
+  ) {}
 
   ngOnInit(): void {
     this.getHeroes();
-  }
-
-  public onFilter() {
-    this.filteredHeroes = this.heroes?.filter((hero) => {
-      return hero.character
-        .toLowerCase()
-        .includes(this.filterValue.toLocaleLowerCase());
+    this.paginateService.maxPages$.subscribe((page) => {
+      this.maxPages = page;
     });
   }
+
   private getHeroes() {
     this.apiServiceService.getHeroes().subscribe((heroes) => {
       this.heroes = heroes;
-      this.filteredHeroes = heroes;
     });
   }
 }
