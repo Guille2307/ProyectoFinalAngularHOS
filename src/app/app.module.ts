@@ -14,6 +14,8 @@ import { FieldsModule } from './pages/fields/fields.module';
 import { CreateFieldsModule } from './pages/create-fields/create-fields.module';
 import { CreateHeroesModule } from './pages/create-heroes/create-heroes.module';
 import { HttpClientModule } from '@angular/common/http';
+import { EditHeroModule } from './pages/edit-hero/edit-hero.module';
+import { LogoutModule } from './pages/logout/logout.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     HeroDetailModule,
     SharedModule,
+    EditHeroModule,
+    LogoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

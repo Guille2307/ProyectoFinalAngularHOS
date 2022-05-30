@@ -31,12 +31,18 @@
       [routerLink]="['/create-heroes']"
       >Create Heroes</a
     ><span>|</span>
-    <a
+    <!-- <a
+      [ngClass]="{ isSelected: selectedRoute === 'edit-hero/:id' }"
+      class="header-link"
+      [routerLink]="['/edit-hero/:id']"
+      >Edit hero</a
+    ><span>|</span> -->
+    <!-- <a
       [ngClass]="{ isSelected: selectedRoute === 'create-fields' }"
       class="header-link"
       [routerLink]="['/create-fields']"
       >Create Fields</a
-    ><span>|</span>
+    ><span>|</span> -->
     <a
       [ngClass]="{ isSelected: selectedRoute === 'register' }"
       class="header-link"
@@ -48,8 +54,12 @@
       class="header-link"
       [routerLink]="['/login']"
       (click)="login()"
-      >Login</a
-    >
+      >Login </a
+    ><span>|</span>
+
+    <a [routerLink]="['logout']" class="header-link" (click)="logout()"
+      >Logout
+    </a>
   </div>
 </div>
 <div class="header-iconContainer">

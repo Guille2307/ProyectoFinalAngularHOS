@@ -91,9 +91,9 @@
   <div class="hero-fields">
     <label class="form-label" for="">Image</label>
     <input
-      placeholder="Image"
+      placeholder="Image Url"
       formControlName="image"
-      type="file"
+      type="text"
       class="formInput"
     />
 
@@ -107,7 +107,8 @@
       The field is require
     </p>
   </div>
+
   <button class="formButton" type="Submit" [disabled]="!heroForm.valid">
-    Submit
+    {{ hero ? "Edit" : "Create" }}
   </button>
 </form>

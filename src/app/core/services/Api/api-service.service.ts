@@ -32,9 +32,9 @@ export class ApiServiceService {
       body
     );
   }
-  public getHeroById(heroId: string): Observable<IHero> {
+  public getHeroById(idHero: string): Observable<IHero> {
     return this.httpClient.get<IHero>(
-      `https://heroesofthestorm.herokuapp.com/heroes/${heroId}`
+      `https://heroesofthestorm.herokuapp.com/heroes/${idHero}`
     );
   }
 }

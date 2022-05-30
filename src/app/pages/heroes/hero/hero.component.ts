@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   @Input() public hero?: IHero;
+
   constructor() {}
 
   ngOnInit(): void {}

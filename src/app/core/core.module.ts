@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ApiServiceService } from './services/Api/api-service.service';
 import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './hero-created.interceptor';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
@@ -15,6 +17,11 @@ import { RouterModule } from '@angular/router';
     ApiFieldService,
     PaginateService,
     AuthGuardGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   imports: [CommonModule, RouterModule],
   exports: [HeaderComponent, FooterComponent],

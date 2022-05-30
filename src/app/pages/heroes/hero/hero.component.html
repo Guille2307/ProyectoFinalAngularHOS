@@ -4,5 +4,6 @@
     <p class="hero-praragraph__name">{{ hero.character }}</p>
     <p>{{ hero.role }}</p>
     <a class="hero-link" [routerLink]="['/detail', hero._id]">Detail</a>
+    <a class="hero-link" [routerLink]="['/edit-hero', hero._id]">Edit</a>
   </div>
 </div>

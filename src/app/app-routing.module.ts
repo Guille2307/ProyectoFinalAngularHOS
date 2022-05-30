@@ -35,6 +35,14 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard],
   },
   {
+    path: 'edit-hero/:id',
+    loadChildren: () =>
+      import('src/app/pages/edit-hero/edit-hero.module').then(
+        (m) => m.EditHeroModule
+      ),
+    canActivate: [AuthGuardGuard],
+  },
+  {
     path: 'register',
     loadChildren: () =>
       import('src/app/pages/register/register.module').then(
@@ -45,6 +53,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('src/app/pages/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'logout',
+    loadChildren: () =>
+      import('src/app/pages/logout/logout.module').then((m) => m.LogoutModule),
   },
   {
     path: 'detail/:id',
