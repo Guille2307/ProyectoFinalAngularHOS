@@ -13,9 +13,10 @@ import { HeroesModule } from './pages/heroes/heroes.module';
 import { FieldsModule } from './pages/fields/fields.module';
 import { CreateFieldsModule } from './pages/create-fields/create-fields.module';
 import { CreateHeroesModule } from './pages/create-heroes/create-heroes.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EditHeroModule } from './pages/edit-hero/edit-hero.module';
 import { LogoutModule } from './pages/logout/logout.module';
+import { AuthInterceptor } from './core/hero-created.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,7 +38,13 @@ import { LogoutModule } from './pages/logout/logout.module';
     EditHeroModule,
     LogoutModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

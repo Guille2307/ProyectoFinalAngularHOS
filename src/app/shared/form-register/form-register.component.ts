@@ -25,9 +25,10 @@ export class FormRegisterComponent implements OnInit {
 
   public registerUser() {
     if (this.signupForm?.value) {
-      this.userService
-        .register(this.signupForm.value)
-        .subscribe((res) => console.log(res));
+      this.userService.register(this.signupForm.value).subscribe((res) => {
+        console.log(res);
+        this.router.navigate(['/login']);
+      });
     }
   }
 }

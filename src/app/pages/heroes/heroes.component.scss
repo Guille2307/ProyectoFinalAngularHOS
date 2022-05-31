@@ -36,7 +36,7 @@
   text-align: center;
   padding: 0.3rem;
   color: #000116;
-  border: solid 2px #5757e5;
+  border: solid 3px #5757e5;
   font-weight: bold;
   font-size: 18px;
 }
@@ -58,4 +58,8 @@
   height: 30px;
   border: solid 2px #5757e5;
   text-align: center;
+}
+section {
+  display: block;
+  overflow-x: hidden;
 }
