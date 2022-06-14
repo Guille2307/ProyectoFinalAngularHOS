@@ -19,25 +19,3 @@ body {
   overflow-x: hidden;
 }
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Orbitron:wght@400;700;900&family=Roboto:ital,wght@0,400;1,700&display=swap");
-
-$mobile: 570px;
-$tablet: 720px;
-$desktop: 1200px;
-
-@mixin mobile {
-  @media only screen and (max-width: $mobile) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media only screen and (max-width: $tablet) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media only screen and (max-width: $tablet) {
-    @content;
-  }
-}

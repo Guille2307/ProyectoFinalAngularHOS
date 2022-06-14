@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiServiceService {
   constructor(private httpClient: HttpClient) {}
-  public getHeroes(): Observable<IHero[]> {
-    return this.httpClient.get<IHero[]>(
+  public getHeroes(): Observable<any> {
+    return this.httpClient.get<any>(
       'https://heroesofthestorm.herokuapp.com/heroes'
     );
   }
