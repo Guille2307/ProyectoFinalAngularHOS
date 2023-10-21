@@ -58,10 +58,14 @@
       [routerLink]="['/login']"
       (click)="login()"
       *ngIf="!this.userService.isloggedIn()"
-      >Login </a
-    ><span *ngIf="!this.userService.isloggedIn()">|</span>
+      >Login
+    </a>
 
-    <a [routerLink]="['logout']" class="header-link" (click)="logout()"
+    <a
+      [routerLink]="['logout']"
+      class="header-link"
+      (click)="logout()"
+      *ngIf="this.userService.isloggedIn()"
       >Logout
     </a>
   </div>
