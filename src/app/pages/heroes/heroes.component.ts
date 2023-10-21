@@ -31,6 +31,4 @@ export class HeroesComponent implements OnInit {
       this.heroes = heroes.heroes;
     });
   }
-
-  private onEdit() {}
 }

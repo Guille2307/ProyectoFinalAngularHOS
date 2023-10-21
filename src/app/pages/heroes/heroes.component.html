@@ -1,4 +1,5 @@
 <section>
+  <h3 *ngIf="!heroes" class="text-center m-5">Find Heroes...</h3>
   <div class="hero-title">
     <h1>Choose your hero and start the storm!</h1>
     <p>
@@ -12,11 +13,11 @@
   </div>
   <div *ngIf="heroes" class="hero-list">
     <app-hero
-      *ngFor="let hero of heroes | filter: filterValue | pagination: page"
+      *ngFor="let hero of heroes | filter : filterValue"
       [hero]="hero"
     ></app-hero>
   </div>
-  <div class="hero-pages">
+  <!-- <div class="hero-pages">
     <p class="hero-pages_paragraph">Pages</p>
     <input
       class="hero-page__input"
@@ -24,5 +25,5 @@
       [(ngModel)]="page"
       [max]="maxPages"
     />
-  </div>
+  </div> -->
 </section>

@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-user',
@@ -34,9 +35,12 @@ export class FormUserComponent implements OnInit {
   public loginUser() {
     if (this.userForm?.valid) {
       this.userService.login(this.userForm.value).subscribe({
-        next: (res) => console.log(res),
+        next: (res) => {
+          ('');
+        },
         error: (err) => (this.error = err.error.message),
       });
     }
+    Swal.fire('You are logged in', '', 'success');
   }
 }

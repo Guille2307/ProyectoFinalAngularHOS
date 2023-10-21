@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/core/services/user/user.service';
 import { IHero } from './../../../core/services/models/hero.model';
 
 import { Component, Input, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeroComponent implements OnInit {
   @Input() public hero?: IHero;
 
-  constructor() {}
+  constructor(public userService: UserService) {}
 
   ngOnInit(): void {}
 }

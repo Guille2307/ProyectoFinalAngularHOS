@@ -1,114 +1,118 @@
 <form
-  class="hero-form"
+  class="centerAll"
   *ngIf="heroForm"
   [formGroup]="heroForm"
   (submit)="saveHero()"
+  enctype="multipart/form-data"
 >
-  <div class="hero-fields">
-    <label class="form-label" for="">Character</label>
-    <input
-      placeholder="Character"
-      formControlName="character"
-      class="formInput"
-    />
-    <p
-      class="erro"
-      *ngIf="
+  <div class="card p-5 m-3">
+    <div class="hero-fields">
+      <label class="form-label" for="">Character</label>
+      <input
+        placeholder="Character"
+        formControlName="character"
+        class="formInput"
+      />
+      <p
+        class="erro"
+        *ngIf="
         !heroForm.get('character')?.valid 
         && heroForm.get('character')?.dirty 
         &&heroForm.get('character')?.errors?.['require']
       "
-    >
-      The field is require
-    </p>
-  </div>
-  <div class="hero-fields">
-    <label class="form-label" for="">Role</label>
-    <input placeholder="Role" formControlName="role" class="formInput" />
-    <p
-      class="erro"
-      *ngIf="!heroForm.get('role')?.valid 
+      >
+        The field is require
+      </p>
+    </div>
+    <div class="hero-fields">
+      <label class="form-label" for="">Role</label>
+      <input placeholder="Role" formControlName="role" class="formInput" />
+      <p
+        class="erro"
+        *ngIf="!heroForm.get('role')?.valid 
       && heroForm.get('role')?.dirty
       && heroForm.get('role')?.errors?.['require']"
-    >
-      The field is require
-    </p>
-  </div>
-  <div class="hero-fields">
-    <label class="form-label" for="">Difficulty</label>
-    <input
-      placeholder="Difficulty"
-      formControlName="difficulty"
-      class="formInput"
-    />
-    <p
-      class="erro"
-      *ngIf="
+      >
+        The field is require
+      </p>
+    </div>
+    <div class="hero-fields">
+      <label class="form-label" for="">Difficulty</label>
+      <input
+        placeholder="Difficulty"
+        formControlName="difficulty"
+        class="formInput"
+      />
+      <p
+        class="erro"
+        *ngIf="
         !heroForm.get('difficulty')?.valid 
         && heroForm.get('difficulty')?.dirty
         && heroForm.get('difficulty')?.errors?.['require']
       "
-    >
-      The field is require
-    </p>
-  </div>
-  <div class="hero-fields">
-    <label class="form-label" for="">Universe</label>
-    <input
-      placeholder="Universe"
-      formControlName="universe"
-      class="formInput"
-    />
-    <p
-      class="erro"
-      *ngIf="
+      >
+        The field is require
+      </p>
+    </div>
+    <div class="hero-fields">
+      <label class="form-label" for="">Universe</label>
+      <input
+        placeholder="Universe"
+        formControlName="universe"
+        class="formInput"
+      />
+      <p
+        class="erro"
+        *ngIf="
         !heroForm.get('universe')?.valid 
         && heroForm.get('universe')?.dirty
         && heroForm.get('universe')?.errors?.['require']
       "
-    >
-      The field is require
-    </p>
-  </div>
-  <div class="hero-fields">
-    <label class="form-label" for="">Description</label>
-    <textarea
-      placeholder="Description"
-      formControlName="description"
-      class="form-textarea"
-      for=""
-    ></textarea>
+      >
+        The field is require
+      </p>
+    </div>
+    <div class="hero-fields">
+      <label class="form-label" for="">Description</label>
+      <textarea
+        placeholder="Description"
+        formControlName="description"
+        class="form-textarea"
+        for=""
+      ></textarea>
 
-    <p
-      class="erro"
-      *ngIf="!heroForm.get('description')?.valid 
+      <p
+        class="erro"
+        *ngIf="!heroForm.get('description')?.valid 
         && heroForm.get('description')?.dirty
         && heroForm.get('description')?.errors?.['require']"
-    >
-      The field is require
-    </p>
-  </div>
-  <div class="hero-fields">
-    <label class="form-label" for="">Image</label>
-    <input
-      placeholder="Image Url"
-      formControlName="image"
-      type="text"
-      class="formInput"
-    />
+      >
+        The field is require
+      </p>
+    </div>
+    <div class="hero-fields">
+      <label class="form-label" for="">Image</label>
+      <input
+        placeholder="Image Url"
+        formControlName="image"
+        type="text"
+        class="formInput"
+      />
 
-    <p
-      class="erro"
-      *ngIf="!heroForm.get('image')?.valid 
+      <p
+        class="erro"
+        *ngIf="!heroForm.get('image')?.valid 
       && heroForm.get('image')?.dirty
       && heroForm.get('image')?.errors?.['require']
       "
-    >
-      The field is require
-    </p>
+      >
+        The field is require
+      </p>
+    </div>
+    <div class="centerAll">
+      <button class="formButton" type="Submit" [disabled]="!heroForm.valid">
+        {{ hero ? "Edit" : "Create" }}
+      </button>
+    </div>
   </div>
-
-  <button class="formButton" type="Submit" [disabled]="!heroForm.valid">
-    {{ hero ? "Edit" : "Create" }}
-  </button>
 </form>

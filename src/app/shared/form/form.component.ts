@@ -7,7 +7,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -18,11 +20,12 @@ export class FormComponent implements OnInit {
   @Input() public hero?: IHero;
   @Input() public editMode: boolean = true;
   public heroForm?: FormGroup;
-
+  public id!: string;
   constructor(
     private fb: FormBuilder,
     private apiServiceService: ApiServiceService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   public ngOnInit() {
@@ -48,15 +51,20 @@ export class FormComponent implements OnInit {
       ]),
     });
   }
+  public getId() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['id'];
+    });
+  }
   public saveHero() {
     const formValue = this.heroForm?.value;
     const heroApp$ =
       this.editMode && this.hero
-        ? this.apiServiceService.editHero(this.hero._id, formValue)
+        ? this.apiServiceService.editHero(this.hero!._id, formValue)
         : this.apiServiceService.addHero(formValue);
     heroApp$.subscribe((hero) => {
-      console.log(hero);
-      this.router.navigate(['/heroes']);
+      Swal.fire('heroe created success', '', 'success');
+      this.router.navigate([`/heroes`]);
     });
   }
 }

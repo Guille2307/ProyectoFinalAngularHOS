@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
   & h3 {
     margin-bottom: 1.5rem;
@@ -50,6 +51,11 @@
   text-align: center;
   & img {
     margin: 0 2rem;
-    width: 410px;
+    width: 550px;
+  }
+  @media only screen and (max-width: 411px) {
+    img {
+      width: 350px;
+    }
   }
 }

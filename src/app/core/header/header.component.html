@@ -6,6 +6,7 @@
       alt="logo heroes"
     />
   </div>
+
   <div class="header-linkContainer">
     <a
       [ngClass]="{ isSelected: selectedRoute === '' }"
@@ -29,8 +30,9 @@
       [ngClass]="{ isSelected: selectedRoute === 'create-heroes' }"
       class="header-link"
       [routerLink]="['/create-heroes']"
+      *ngIf="this.userService.isloggedIn()"
       >Create Heroes</a
-    ><span>|</span>
+    ><span *ngIf="this.userService.isloggedIn()">|</span>
     <!-- <a
       [ngClass]="{ isSelected: selectedRoute === 'edit-hero/:id' }"
       class="header-link"
@@ -47,20 +49,25 @@
       [ngClass]="{ isSelected: selectedRoute === 'register' }"
       class="header-link"
       [routerLink]="['/register']"
+      *ngIf="!this.userService.isloggedIn()"
       >Register</a
-    ><span>|</span>
+    ><span *ngIf="!this.userService.isloggedIn()">|</span>
     <a
       [ngClass]="{ isSelected: selectedRoute === 'login' }"
       class="header-link"
       [routerLink]="['/login']"
       (click)="login()"
+      *ngIf="!this.userService.isloggedIn()"
       >Login </a
-    ><span>|</span>
+    ><span *ngIf="!this.userService.isloggedIn()">|</span>
 
     <a [routerLink]="['logout']" class="header-link" (click)="logout()"
       >Logout
     </a>
   </div>
+</div>
+<div class="text-end me-5" *ngIf="this.userService.isloggedIn()">
+  <app-user></app-user>
 </div>
 <div class="header-iconContainer">
   <img

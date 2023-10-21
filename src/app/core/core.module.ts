@@ -9,9 +9,10 @@ import { ApiServiceService } from './services/Api/api-service.service';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './hero-created.interceptor';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, UserComponent],
   providers: [
     ApiServiceService,
     ApiFieldService,

@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://heroesofthestorm.herokuapp.com',
-  authUrl: 'https://heroesofthestorm.herokuapp.com/users/login',
-  regisUrl: '//heroesofthestorm.herokuapp.com/users/register',
+  apiUrl: 'https://heroesofthestorm-production.up.railway.app',
 };
 
 /*

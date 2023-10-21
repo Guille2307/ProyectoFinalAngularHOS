@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://heroesofthestorm.herokuapp.com',
+  apiUrl: 'https://heroesofthestorm-production.up.railway.app/',
 };

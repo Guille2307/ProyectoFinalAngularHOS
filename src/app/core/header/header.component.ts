@@ -1,7 +1,9 @@
 import { ApiServiceService } from './../services/Api/api-service.service';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { UserService } from '../services/user/user.service';
+import Swal from 'sweetalert2';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +13,8 @@ import { UserService } from '../services/user/user.service';
 export class HeaderComponent implements OnInit {
   public selectedRoute?: string;
   public loginClicks: boolean = true;
-  constructor(
-    private router: Router,
-    private apiServiceService: ApiServiceService,
-    private userService: UserService
-  ) {}
+
+  constructor(private router: Router, public userService: UserService) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -24,16 +23,18 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+
   public login() {
     if (this.userService.isloggedIn()) {
       this.router.navigate(['']);
-    } else {
-      this.router.navigate(['login']);
+    }
+    if (localStorage.getItem('access_token')) {
+      Swal.fire('You are logged in', '', 'info');
     }
   }
   public logout() {
     this.userService.logout();
-    console.log('logout success');
+    Swal.fire('You are logout', '', 'success');
     return this.router.navigate(['login']);
   }
 }

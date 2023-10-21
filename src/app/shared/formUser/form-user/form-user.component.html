@@ -1,24 +1,28 @@
-<div *ngIf="userForm">
+<div *ngIf="userForm" class="centerAll">
   <form class="form-container" [formGroup]="userForm" (submit)="loginUser()">
-    <div class="form-items">
-      <label class="form-label">Email</label>
-      <input
-        class="form-control"
-        formControlName="email"
-        type="email"
-        require
-      />
+    <div class="card p-5 m-3">
+      <div class="form-items">
+        <label class="form-label">Email</label>
+        <input
+          class="form-control"
+          formControlName="email"
+          type="email"
+          require
+        />
+      </div>
+      <div class="form-items">
+        <label class="form-label">Password</label>
+        <input
+          class="form-control"
+          formControlName="password"
+          type="password"
+          require
+        />
+      </div>
+      <div class="centerAll">
+        <button class="form-submit" type="submit">Sign up</button>
+        {{ error }}
+      </div>
     </div>
-    <div class="form-items">
-      <label class="form-label">Password</label>
-      <input
-        class="form-control"
-        formControlName="password"
-        type="password"
-        require
-      />
-    </div>
-    <button class="form-submit" type="submit">Sign up</button>
-    {{ error }}
   </form>
 </div>
