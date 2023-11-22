@@ -9,7 +9,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  currentUser: any;
+  currentUser?: any;
+  currentUserEmail: string | null = localStorage.getItem('currentUser');
+
   constructor(
     public userService: UserService,
     private apiServiceService: ApiServiceService
@@ -30,6 +32,7 @@ export class UserComponent implements OnInit {
 
         if (user) {
           this.currentUser = user[0].email;
+          localStorage.setItem('currentUser', this.currentUser);
         }
       });
   }

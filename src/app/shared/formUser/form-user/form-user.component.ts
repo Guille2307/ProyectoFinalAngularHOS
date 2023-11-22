@@ -34,12 +34,15 @@ export class FormUserComponent implements OnInit {
   }
   public loginUser() {
     if (this.userForm?.valid) {
-      this.userService.login(this.userForm.value).subscribe({
-        next: (res) => {
-          ('');
-        },
-        error: (err) => (this.error = err.error.message),
-      });
+      this.userService
+        .login(this.userForm.value)
+        .pipe()
+        .subscribe({
+          next: (res) => {
+            ('');
+          },
+          error: (err) => (this.error = err.error.message),
+        });
     }
     Swal.fire('You are logged in', '', 'success');
   }
